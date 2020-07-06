@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS albums;
 -- release_date — integer representing year record was released
 -- sales — floating point value for number of records sold (in millions)
 -- genre — string for storing the record's genre(s)
-CREATE TABLE albums; (
+CREATE TABLE albums (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     artist VARCHAR(100),
     name VARCHAR(100),
