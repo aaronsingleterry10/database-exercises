@@ -4,11 +4,12 @@ USE quotes_db;
 /*********************** SELECT ***********************/
 
 -- TODO TOGETHER: View the author last name and the quote from quotes. Before the output, add a caption explaining the results.
-
+    SELECT author_last_name, quote FROM quotes;
 
 -- TODO TOGETHER: Select all information from the quotes table. Before the output, add a caption explaining the results.
 -- Notice how the id has been auto-incrementing on each insert.
-
+    SELECT 'This is all the info from the quotes table' AS '2nd Select query';
+    SELECT * FROM quotes;
 
 /*********************** WHERE ***********************/
 
