@@ -37,9 +37,9 @@ USE quotes_db;
 
 -- TODO TOGETHER: Delete quote with id 3. Then view the output.
     SELECT * FROM quotes WHERE id = 3;
-    DELETE FROM quotes WHERE id = 3;
+--     DELETE FROM quotes WHERE id = 3;
 
 /*********************** TRUNCATE ***********************/
 -- TODO TOGETHER: Truncate quotes table.... there is no going back! Deletes all records.
 
-    TRUNCATE quotes;
+--     TRUNCATE quotes;

@@ -8,9 +8,10 @@ CREATE TABLE IF NOT EXISTS contacts (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     name VARCHAR(125),
     email VARCHAR(125),
-    phone CHAR(10);
-    created DATETIME;
-    updated DATETIME;
+    phone CHAR(10),
+    created DATETIME,
+    updated DATETIME,
+    PRIMARY KEY(id)
 );
 -- * Id - Integer
 -- * Name - String
