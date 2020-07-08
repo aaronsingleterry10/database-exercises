@@ -10,4 +10,7 @@ SELECT * FROM employees WHERE last_name LIKE 'E%';
 SELECT * FROM employees WHERE hire_date LIKE '199%-%-%';
 
 # Find all employees born on Christmas — 842 rows.
+SELECT * FROM employees WHERE birth_date LIKE '%-12-25';
+
 # Find all employees with a 'q' in their last name — 1,873 rows.
+SELECT * FROM employees WHERE last_name LIKE '%q%';
