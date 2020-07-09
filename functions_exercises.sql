@@ -25,10 +25,10 @@ SELECT * FROM employees WHERE first_name IN ('Irena', 'Vidya', 'Maya') AND gende
 SELECT * FROM employees WHERE last_name LIKE 'E%' OR last_name LIKE '%e';
 
 # Duplicate the previous query and update it to find all employees whose last name starts and ends with 'E' — 899 rows.
-SELECT * FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%e';
+SELECT CONCAT(first_name, ' ', last_name) FROM employees WHERE last_name LIKE 'e%e';
 
 # Find all employees hired in the 90s and born on Christmas — 362 rows.
 SELECT * FROM employees WHERE hire_date LIKE '199%-%-%' AND birth_date LIKE '%-12-25' ORDER BY birth_date, hire_date DESC;
 
 # Find all employees with a 'q' in their last name but not 'qu' — 547 rows.
-SELECT * FROM employees WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%';
+SELECT CONCAT(first_name, ' ', last_name, ' has worked: ', DATEDIFF(CURDATE(), hire_date), ' days') FROM employees WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%';
