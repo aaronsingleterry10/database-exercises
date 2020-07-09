@@ -25,7 +25,7 @@ SELECT * FROM employees WHERE first_name IN ('Irena', 'Vidya', 'Maya') AND gende
 SELECT * FROM employees WHERE last_name LIKE 'E%' OR last_name LIKE '%e';
 
 # Duplicate the previous query and update it to find all employees whose last name starts and ends with 'E' — 899 rows.
-SELECT * FROM employees WHERE last_name LIKE 'E%' AND last_name LIKE '%e';
+SELECT * FROM employees WHERE last_name LIKE 'e%e';
 
 # Find all employees hired in the 90s and born on Christmas — 362 rows.
 SELECT * FROM employees WHERE hire_date LIKE '199%-%-%' AND birth_date LIKE '%-12-25';
