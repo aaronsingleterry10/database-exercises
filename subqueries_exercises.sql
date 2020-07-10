@@ -21,5 +21,16 @@ WHERE emp_no IN (
     WHERE first_name = 'Aamod'
     );
 # 314 total titles, 6 unique titles
-#
+
 # Find all the current department managers that are female.
+
+SELECT * FROM dept_manager;
+
+SELECT first_name AS first_name, last_name AS last_name
+FROM employees
+WHERE emp_no IN (
+    SELECT emp_no
+    FROM dept_manager
+    WHERE to_date > NOW()
+    )
+AND gender = 'F';
