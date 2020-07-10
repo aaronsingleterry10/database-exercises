@@ -76,7 +76,9 @@ JOIN dept_emp de on departments.dept_no = de.dept_no
 JOIN titles t on de.emp_no = t.emp_no
 WHERE departments.dept_name = 'Customer Service' AND t.to_date = '9999-01-01' AND de.to_date = '9999-01-01'
 GROUP BY title;
+
 select * from salaries;
+
 SELECT departments.dept_name AS 'Department Name', CONCAT(employees.first_name, ' ', employees.last_name) AS 'Name', salaries.salary
 FROM departments
 JOIN dept_manager dm on departments.dept_no = dm.dept_no
@@ -85,5 +87,23 @@ JOIN salaries ON salaries.emp_no = employees.emp_no
 WHERE salaries.to_date = '9999-01-01' AND dm.to_date = '9999-01-01'
 ORDER BY dept_name;
 
+# Bonus Find the names of all current employees, their department name, and their current manager's name.
+
+#     240,124 Rows
+#     Employee Name | Department Name  |  Manager Name
+#     --------------|------------------|-----------------
+#      Huan Lortz   | Customer Service | Yuchang Weedman
+#      .....
+SELECT * FROM departments;
+SELECT * FROM dept_manager;
+SELECT * FROM employees;
+SELECT * FROM dept_emp;
+SELECT CONCAT(emp.first_name, ' ', emp.last_name) AS 'Employee Name', d.dept_name AS 'Department Name', CONCAT(emp2.first_name, ' ', emp2.last_name)
+FROM employees AS emp
+JOIN dept_emp AS de ON emp.emp_no = de.emp_no
+JOIN departments d on de.dept_no = d.dept_no
+JOIN dept_manager dm on d.dept_no = dm.dept_no
+JOIN employees emp2 on de.emp_no = emp2.emp_no
+WHERE de.to_date = '9999-01-01' AND dm.to_date = '9999-01-01';
 
 
