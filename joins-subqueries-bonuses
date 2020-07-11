@@ -12,7 +12,27 @@ WHERE hire_date IN (
     FROM employees
     WHERE emp_no = '101010'
     );
+
 -- Find all the titles held by all employees with the first name Aamod.
+SELECT * FROM employees;
+SELECT * FROM dept_emp;
+SELECT * FROM departments;
+SELECT * FROM dept_manager;
+SELECT * FROM titles;
+SELECT CONCAT(emp.first_name, ' ', emp.last_name) AS Name, titles.title
+FROM titles
+JOIN employees emp ON emp.emp_no = titles.emp_no
+WHERE emp.first_name = 'Aamod';
+
+SELECT title
+FROM titles
+WHERE emp_no IN (
+    SELECT emp_no
+    FROM employees
+    WHERE first_name = 'Aamod'
+    );
+
+
 -- Find all the current department managers that are female.
 -- Find all the department names that currently have female managers.
 -- what is the most common birthday in the company? least common?
