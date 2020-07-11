@@ -34,3 +34,47 @@ WHERE emp_no IN (
     WHERE to_date > NOW()
     )
 AND gender = 'F';
+# Find all the department names that currently have female managers.
+SELECT * FROM dept_emp;
+SHOW CREATE TABLE dept_emp;
+SELECT * FROM departments;
+SELECT * FROM dept_manager;
+
+SELECT dept_name
+FROM departments
+WHERE dept_no IN (
+    SELECT dept_no
+    FROM dept_manager
+    WHERE emp_no IN (
+        SELECT emp_no
+        FROM employees
+        WHERE gender = 'F'
+        )
+    AND to_date > NOW()
+    );
+
+# Find the first and last name of the employee with the highest salary.
+SELECT * FROM salaries;
+
+SELECT emp_no, salary
+FROM salaries
+WHERE to_date = '9999-01-01'
+ORDER BY salary DESC
+LIMIT 1;
+
+SELECT first_name, last_name
+FROM employees
+WHERE emp_no IN (
+    SELECT emp_no
+    FROM salaries
+    WHERE to_date = '9999-01-01'
+    AND salary = (
+        SELECT MAX(salary)
+        FROM salaries
+        )
+    );
+
+SELECT *
+FROM employees
+WHERE emp_no = '10001';
+
