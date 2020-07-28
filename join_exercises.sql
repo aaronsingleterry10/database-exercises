@@ -106,4 +106,4 @@ JOIN dept_manager dm on d.dept_no = dm.dept_no
 JOIN employees emp2 on de.emp_no = emp2.emp_no
 WHERE de.to_date = '9999-01-01' AND dm.to_date = '9999-01-01';
 
-
+SHOW DATABASES;
